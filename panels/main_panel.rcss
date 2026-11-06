@@ -1,0 +1,338 @@
+/* Cyango retained panel */
+
+.cy-panel {
+    padding: 14dp;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 0;
+}
+
+.cy-topbar {
+    display: flex;
+    align-items: center;
+    height: 41dp;
+    margin: 0 15dp 14dp 0;
+    padding: 0 2dp 9dp 2dp;
+    border-bottom-width: 1dp;
+    border-bottom-color: #343b47;
+}
+
+.cy-topbar-logo {
+    width: 26dp;
+    height: 26dp;
+    margin-right: 9dp;
+    flex-shrink: 0;
+}
+
+.cy-topbar-title {
+    display: block;
+    color: #e8ddd0;
+    font-size: 13dp;
+    font-weight: bold;
+}
+
+.cy-topbar-subtitle {
+    display: block;
+    margin-top: 1dp;
+    color: #9da7b7;
+    font-size: 10dp;
+}
+
+.cy-form-view, .cy-state-view {
+    margin-right: 15dp;
+}
+
+.cy-form-view, .cy-state-view, .cy-grow, .cy-account-copy {
+    min-width: 0;
+}
+
+.cy-account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12dp;
+    border-bottom-width: 1dp;
+    border-bottom-color: #343b47;
+}
+
+.cy-account-line, .cy-check-row, .cy-button-row, .cy-progress-meta {
+    display: flex;
+    align-items: center;
+}
+
+.cy-status-dot {
+    width: 8dp;
+    height: 8dp;
+    margin-right: 8dp;
+    border-radius: 4dp;
+    background-color: #57d69a;
+}
+
+.cy-account-title, .cy-card-title, .cy-strong {
+    display: block;
+    font-weight: bold;
+}
+
+.cy-muted {
+    color: #9da7b7;
+}
+
+.cy-small, .cy-help {
+    display: block;
+    font-size: 11dp;
+    margin-top: 2dp;
+}
+
+.cy-link {
+    padding: 3dp 2dp;
+    border-width: 0;
+    color: #55a2f2;
+    background-color: transparent;
+}
+
+.cy-card {
+    padding: 11dp;
+    border-width: 1dp;
+    border-color: #3b4351;
+    border-radius: 4dp;
+    background-color: #272c36;
+}
+
+.cy-credential-card {
+    border-color: #4a4b4d;
+    background-color: #343536;
+}
+
+.cy-credential-field-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10dp;
+    margin-bottom: 5dp;
+}
+
+.cy-credential-label {
+    color: #c7cfda;
+    font-size: 12dp;
+    font-weight: bold;
+}
+
+.cy-account-link {
+    padding: 2dp 0;
+    font-size: 11dp;
+}
+
+.cy-token {
+    display: block;
+    width: auto;
+    padding: 0 9dp;
+    border-width: 1dp;
+    border-color: #4a4b4d;
+    border-radius: 3dp;
+    color: #f1f4f8;
+    background-color: #2f3032;
+}
+
+.cy-token:focus {
+    border-color: #68b2ff;
+    background-color: #2f3032;
+}
+
+.cy-full, .cy-primary {
+    width: 100%;
+}
+
+.cy-check-row {
+    margin: 9dp 0;
+}
+
+.cy-check-row input {
+    margin-right: 7dp;
+}
+
+.cy-button-row {
+    gap: 7dp;
+}
+
+.cy-grow {
+    flex: 1;
+}
+
+.cy-forget {
+    margin-top: 6dp;
+}
+
+.cy-section {
+    padding-top: 16dp;
+}
+
+.cy-eyebrow {
+    display: block;
+    margin-bottom: 9dp;
+    color: #aeb8c7;
+    font-size: 10dp;
+    font-weight: bold;
+    letter-spacing: 1dp;
+}
+
+.cy-field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8dp;
+    min-width: 0;
+}
+
+.cy-label {
+    width: 82dp;
+    margin-right: 10dp;
+    color: #c7cfda;
+    flex-shrink: 0;
+}
+
+.cy-summary {
+    display: flex;
+    align-items: center;
+    margin-top: 9dp;
+    padding: 8dp 10dp;
+    border-width: 1dp;
+    border-color: #4a4b4d;
+    border-radius: 4dp;
+    background-color: #343536;
+}
+
+.cy-summary.warning {
+    border-color: #76623c;
+    background-color: #383634;
+}
+
+.cy-summary-icon {
+    width: 8dp;
+    height: 8dp;
+    margin-right: 8dp;
+    border-radius: 4dp;
+    background-color: #57d69a;
+    flex-shrink: 0;
+}
+
+.cy-summary.warning .cy-summary-icon {
+    background-color: #f1bd62;
+}
+
+.cy-summary-copy {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4dp;
+}
+
+.cy-summary-title {
+    font-weight: bold;
+}
+
+.cy-summary-meta {
+    font-size: 11dp;
+}
+
+.cy-advanced-toggle {
+    display: flex;
+    width: 100%;
+    margin-top: 6dp;
+    padding: 9dp 3dp;
+    border-width: 1dp 0;
+    border-color: #343b47;
+    color: #c9d1dc;
+    background-color: transparent;
+    text-align: left;
+}
+
+.cy-marker {
+    width: 16dp;
+    color: #8995a5;
+}
+
+.cy-advanced {
+    padding: 9dp 3dp 2dp 3dp;
+}
+
+.cy-resume, .cy-progress-card, .cy-success-card {
+    margin-top: 14dp;
+}
+
+.cy-resume .cy-button-row {
+    margin-top: 9dp;
+}
+
+.cy-error {
+    color: #ff7575;
+}
+
+.cy-form-error {
+    display: block;
+    margin: 10dp 0 6dp 0;
+}
+
+.cy-footnote {
+    display: block;
+    margin-top: 8dp;
+    font-size: 11dp;
+    text-align: center;
+}
+
+.cy-state-view {
+    min-height: 420dp;
+}
+
+.cy-state-heading {
+    display: block;
+    margin: 3dp 0 6dp 0;
+    font-size: 16dp;
+    font-weight: bold;
+}
+
+.cy-state-copy {
+    display: block;
+}
+
+.cy-progress-card {
+    margin-top: 24dp;
+}
+
+.cy-progress-meta {
+    justify-content: space-between;
+    margin-bottom: 7dp;
+}
+
+.cy-progress {
+    width: 100%;
+    margin-bottom: 7dp;
+}
+
+.cy-state-actions {
+    margin-top: 28dp;
+}
+
+.cy-secondary-action {
+    margin-top: 7dp;
+}
+
+.cy-tertiary-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18dp;
+    margin-top: 14dp;
+}
+
+.cy-refresh {
+    margin-left: 6dp;
+    font-size: 11dp;
+    flex-shrink: 0;
+}
+
+.cy-format-note {
+    margin: -4dp 0 8dp 92dp;
+}
+
+.cy-credential-card .cy-help {
+    margin-top: 5dp;
+}

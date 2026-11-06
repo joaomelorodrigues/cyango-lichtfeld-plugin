@@ -1,0 +1,165 @@
+<rml>
+<head>
+  <link type="text/rcss" href="main_panel.rcss"/>
+</head>
+<body class="cy-panel" data-model="cyango">
+  <div class="cy-topbar">
+    <img class="cy-topbar-logo" src="cyango-logo.tga" alt="Cyango" />
+    <div class="cy-topbar-copy">
+      <span class="cy-topbar-title">Cyango</span>
+      <span class="cy-topbar-subtitle">Publish splats as interactive stories</span>
+    </div>
+  </div>
+
+  <div class="cy-form-view" data-if="show_form">
+    <div class="cy-account" data-if="show_account">
+      <div class="cy-account-copy">
+        <div class="cy-account-line">
+          <span class="cy-status-dot"></span>
+          <span class="cy-account-title">{{account_title}}</span>
+        </div>
+        <span class="cy-muted cy-small">{{account_source}}</span>
+      </div>
+      <button type="button" class="cy-link" data-event-click="change_credentials">Change</button>
+    </div>
+
+    <div class="cy-card cy-credential-card" data-if="show_credentials">
+      <span class="cy-card-title">Connect to Cyango</span>
+      <div class="cy-credential-field-heading">
+        <span class="cy-credential-label">External publish token</span>
+        <button type="button" class="cy-link cy-account-link" data-event-click="open_token_page">Create a token</button>
+      </div>
+      <input type="password" class="cy-token" placeholder="Paste token (cyp_...)" data-value="token_entry" />
+      <span class="cy-muted cy-help">In Cyango Studio: Account settings, External publish tokens.</span>
+      <label class="cy-check-row">
+        <input type="checkbox" data-attrif-checked="remember_token" data-event-change="toggle_remember" />
+        <span>Store securely with your operating system</span>
+      </label>
+      <span class="cy-error cy-help" data-if="show_credentials_error">{{form_error}}</span>
+      <div class="cy-button-row">
+        <button type="button" class="btn btn--primary cy-grow" data-event-click="connect" data-attrif-disabled="!can_connect">Connect</button>
+        <button type="button" class="btn btn--secondary cy-grow" data-if="show_cancel_credentials" data-event-click="cancel_credentials">Cancel</button>
+      </div>
+      <button type="button" class="cy-link cy-forget" data-if="show_cancel_credentials" data-event-click="forget_token">Forget saved token</button>
+    </div>
+
+    <div class="cy-section">
+      <span class="cy-eyebrow">Scene</span>
+      <div class="cy-field-row">
+        <span class="cy-label">Content</span>
+        <select class="cy-grow" data-value="scope">
+          <option value="all">All splats</option>
+          <option value="visible">Visible splats</option>
+        </select>
+      </div>
+      <div class="cy-summary" data-class-warning="!selection_valid">
+        <span class="cy-summary-icon"></span>
+        <div class="cy-summary-copy cy-grow">
+          <span class="cy-summary-title">{{selection_title}}</span>
+          <span class="cy-muted cy-summary-meta" data-if="selection_valid">&#183;</span>
+          <span class="cy-muted cy-summary-meta">{{selection_note}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cy-section">
+      <span class="cy-eyebrow">Story</span>
+      <div class="cy-field-row">
+        <span class="cy-label">Title</span>
+        <input class="cy-grow" type="text" placeholder="Story title" data-value="title" />
+      </div>
+      <div class="cy-field-row">
+        <span class="cy-label">Description</span>
+        <input class="cy-grow" type="text" placeholder="Optional" data-value="description" />
+      </div>
+      <div class="cy-field-row">
+        <span class="cy-label">Asset folder</span>
+        <select class="cy-grow" data-value="folder_id">
+          <option value="">My Uploads (default)</option>
+          <option data-for="folder : folders" data-attr-value="folder.id">{{folder.name}}</option>
+        </select>
+        <button type="button" class="cy-link cy-refresh" data-if="show_account" data-event-click="refresh_folders">Refresh</button>
+      </div>
+    </div>
+
+    <button type="button" class="cy-advanced-toggle" data-event-click="toggle_advanced">
+      <span class="cy-marker">{{advanced_marker}}</span><span>Advanced</span>
+    </button>
+    <div class="cy-advanced" data-if="advanced_open">
+      <div class="cy-field-row">
+        <span class="cy-label">Format</span>
+        <select class="cy-grow" data-value="source_format">
+          <option value="spz">SPZ</option>
+          <option value="ply">PLY</option>
+          <option value="sog">SOG</option>
+        </select>
+      </div>
+      <span class="cy-muted cy-help cy-format-note">{{format_note}}</span>
+      <div class="cy-field-row">
+        <span class="cy-label">SH degree</span>
+        <select class="cy-grow" data-value="sh_degree">
+          <option value="0">RGB only</option>
+          <option value="1">Degree 1</option>
+          <option value="2">Degree 2</option>
+          <option value="3">Full / Degree 3</option>
+        </select>
+      </div>
+      <div class="cy-field-row">
+        <span class="cy-label">Parallel parts</span>
+        <select class="cy-grow" data-value="concurrency">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="cy-card cy-resume" data-if="show_resume">
+      <span class="cy-card-title">Resumable upload</span>
+      <span class="cy-muted cy-small">{{resume_title}} - {{resume_size}} staged locally</span>
+      <div class="cy-button-row">
+        <button type="button" class="btn btn--primary cy-grow" data-event-click="resume_upload">Resume</button>
+        <button type="button" class="btn btn--secondary cy-grow" data-event-click="discard_resume">Discard</button>
+      </div>
+    </div>
+
+    <span class="cy-error cy-form-error" data-if="show_upload_error">{{form_error}}</span>
+    <button type="button" class="btn btn--primary cy-primary" data-event-click="start_upload" data-attrif-disabled="!can_upload">Publish to Cyango</button>
+    <span class="cy-muted cy-footnote">Cyango makes a private story. You decide when to publish it.</span>
+  </div>
+
+  <div class="cy-state-view" data-if="show_progress">
+    <span class="cy-state-heading">{{progress_heading}}</span>
+    <span class="cy-muted cy-state-copy">{{success_title}}</span>
+    <div class="cy-card cy-progress-card">
+      <div class="cy-progress-meta">
+        <span>{{progress_status}}</span>
+        <span class="cy-strong">{{progress_pct}}</span>
+      </div>
+      <progress class="cy-progress" max="1" data-attr-value="progress_value" />
+      <span class="cy-muted cy-small">{{progress_detail}}</span>
+    </div>
+    <div class="cy-state-actions">
+      <button type="button" class="btn btn--secondary cy-primary" data-event-click="cancel_upload">Cancel upload</button>
+    </div>
+  </div>
+
+  <div class="cy-state-view" data-if="show_success">
+    <span class="cy-state-heading">Upload complete</span>
+    <span class="cy-muted cy-state-copy">Cyango is converting the splat. The story opens in Cyango Studio.</span>
+    <div class="cy-card cy-success-card">
+      <span class="cy-card-title">{{success_title}}</span>
+      <span class="cy-muted cy-small">{{success_metadata}}</span>
+    </div>
+    <div class="cy-state-actions">
+      <button type="button" class="btn btn--primary cy-primary" data-if="has_story_url" data-event-click="open_story">Open in Cyango Studio</button>
+      <div class="cy-tertiary-actions">
+        <button type="button" class="cy-link" data-if="has_story_url" data-event-click="copy_link">Copy link</button>
+        <button type="button" class="cy-link" data-event-click="upload_another">Publish another scene</button>
+      </div>
+    </div>
+  </div>
+</body>
+</rml>
