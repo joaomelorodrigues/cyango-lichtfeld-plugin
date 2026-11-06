@@ -2,6 +2,8 @@
 
 Publish Gaussian splat scenes from [LichtFeld Studio](https://lichtfeld.io/) to [Cyango](https://cyango.com/). The plugin exports the splats in your scene and uploads them to your Cyango workspace. Cyango makes a private story with the splat. Then you add hotspots, UI and actions in the Cyango app.
 
+![A Gaussian splat scene with a hotspot in the Cyango editor](docs/images/cyango-studio.jpg)
+
 ## Get the Cyango app
 
 Use the Cyango desktop app to make your token and to edit the stories that the plugin publishes.
