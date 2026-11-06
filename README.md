@@ -1,8 +1,19 @@
 # Cyango for LichtFeld Studio
 
-Publish Gaussian splat scenes from [LichtFeld Studio](https://lichtfeld.io/) to [Cyango](https://cyango.com/). The plugin exports the splats in your scene and uploads them to your Cyango workspace. Cyango makes a private story with the splat, so you can add hotspots, UI and actions in Cyango Studio.
+Publish Gaussian splat scenes from [LichtFeld Studio](https://lichtfeld.io/) to [Cyango](https://cyango.com/). The plugin exports the splats in your scene and uploads them to your Cyango workspace. Cyango makes a private story with the splat. Then you add hotspots, UI and actions in the Cyango app.
 
-## Installation
+## Get the Cyango app
+
+Use the Cyango desktop app to make your token and to edit the stories that the plugin publishes.
+
+| System | Download |
+|--------|----------|
+| Windows | [Microsoft Store](https://apps.microsoft.com/detail/9NJTVMGRN0LM) |
+| macOS | [cyango.com/download](https://cyango.com/download) |
+
+The Cyango app can be on a different computer from LichtFeld Studio. There is no Cyango app for Linux. On Linux, use [Cyango Studio](https://studio.cyango.com) in a web browser.
+
+## Install the plugin
 
 You need LichtFeld Studio 0.5.3 or later.
 
@@ -15,13 +26,13 @@ The **Cyango** tab shows in the main workspace.
 
 ## Connect your Cyango account
 
-1. Sign in to [Cyango Studio](https://studio.cyango.com).
+1. Open the Cyango app and sign in.
 2. Open **Account settings > External publish tokens**.
 3. Make a token, for example "LichtFeld on my PC". Copy it. Cyango shows it one time only.
 4. In the **Cyango** tab in LichtFeld Studio, paste the token.
 5. Optional: select **Store securely with your operating system**. Then select **Connect**.
 
-The token publishes into the workspace that was active when you made it. To stop the plugin, revoke the token in Cyango Studio. The plugin keeps the token only in the operating system credential store, never in a plain text file.
+The token publishes into the workspace that was active when you made it. To stop the plugin, revoke the token in the Cyango app. The plugin keeps the token only in the operating system credential store, never in a plain text file.
 
 ## Publish a scene
 
@@ -31,8 +42,9 @@ The token publishes into the workspace that was active when you made it. To stop
 4. Optional: select an asset folder. The default is "My Uploads".
 5. Optional: open **Advanced** to change the file format, the SH degree and the number of parallel parts.
 6. Select **Publish to Cyango**.
+7. When the upload is complete, open the Cyango app. The new story is on the **Stories** page.
 
-When the upload is complete, select **Open in Cyango Studio**. Cyango converts the splat in the background. The story stays private until you publish it.
+Cyango converts the splat in the background. The story stays private until you publish it. On a computer without the Cyango app, **Open in Cyango Studio** opens the story in a web browser.
 
 If an upload stops after the export, the panel shows **Resume**. The plugin then sends only the missing parts. Select **Discard** to delete the staged export.
 
